@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <clipPath id="r"><circle cx="32" cy="32" r="32"/></clipPath>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a6177"/>
+      <stop offset="1" stop-color="#e0a64f"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c47b22"/>
+      <stop offset="1" stop-color="#152c37"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#r)">
+    <rect width="64" height="38" fill="url(#sky)"/>
+    <circle cx="32" cy="36" r="13" fill="#f5d28a"/>
+    <circle cx="32" cy="36" r="8" fill="#fbe6c4"/>
+    <rect y="38" width="64" height="26" fill="url(#water)"/>
+    <rect x="29" y="38" width="6" height="26" fill="#f3d089" opacity="0.55"/>
+  </g>
+  <circle cx="32" cy="32" r="31" fill="none" stroke="#152c37" stroke-width="2"/>
+</svg>
