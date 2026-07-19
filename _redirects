@@ -1,0 +1,8 @@
+# Redirect rules for johngoehle.com
+# (Netlify handles apex/www redirection automatically once both domains are added.)
+
+# Friendly short URLs
+/book       /the-tug.html   301
+/the-tug    /the-tug.html   301
+/buy        https://www.amazon.com/s?k=9798184505862   301
+/amazon     https://www.amazon.com/s?k=9798184505862   301
