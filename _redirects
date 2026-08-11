@@ -2,7 +2,12 @@
 # (Netlify handles apex/www redirection automatically once both domains are added.)
 
 # Friendly short URLs
-/book       /the-tug.html            301
-/the-tug    /the-tug.html            301
-/buy        https://a.co/d/09xuVB6c  301
-/amazon     https://a.co/d/09xuVB6c  301
+/book        /the-tug.html                         301
+/the-tug     /the-tug.html                         301
+/tug         https://www.amazon.com/dp/B0H9GHD57B  301
+/buy         https://www.amazon.com/dp/B0H9GHD57B  301
+/amazon      https://www.amazon.com/dp/B0H9GHD57B  301
+/study       /study-guides.html                    301
+/guides      /study-guides.html                    301
+/bible-study /bible-study.html                     301
+/speaking    /speaking.html                        301
