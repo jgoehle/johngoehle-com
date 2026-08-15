@@ -1,13 +1,20 @@
-# Redirect rules for johngoehle.com
-# (Netlify handles apex/www redirection automatically once both domains are added.)
+# Canonical URL enforcement — .html always 301s to the clean URL.
+# The ! forces the rule to win over the on-disk file of the same name.
+
+/about.html    /about    301!
+/bible-study.html    /bible-study    301!
+/contact.html    /contact    301!
+/index.html    /    301!
+/privacy.html    /privacy    301!
+/speaking.html    /speaking    301!
+/study-guides.html    /study-guides    301!
+/thank-you.html    /thank-you    301!
+/the-tug.html    /the-tug    301!
 
 # Friendly short URLs
-/book        /the-tug.html                         301
-/the-tug     /the-tug.html                         301
-/tug         https://www.amazon.com/dp/B0H9GHD57B  301
-/buy         https://www.amazon.com/dp/B0H9GHD57B  301
-/amazon      https://www.amazon.com/dp/B0H9GHD57B  301
-/study       /study-guides.html                    301
-/guides      /study-guides.html                    301
-/bible-study /bible-study.html                     301
-/speaking    /speaking.html                        301
+/book      /the-tug                              301
+/tug       https://www.amazon.com/dp/B0H9GHD57B  301
+/buy       https://www.amazon.com/dp/B0H9GHD57B  301
+/amazon    https://www.amazon.com/dp/B0H9GHD57B  301
+/study     /study-guides                         301
+/guides    /study-guides                         301

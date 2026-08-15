@@ -2,26 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://johngoehle.com/</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
-    <loc>https://johngoehle.com/about.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://johngoehle.com/about</loc>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
-    <loc>https://johngoehle.com/contact.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://johngoehle.com/bible-study</loc>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
-    <loc>https://johngoehle.com/the-tug.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://johngoehle.com/contact</loc>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://johngoehle.com/privacy</loc>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://johngoehle.com/speaking</loc>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://johngoehle.com/study-guides</loc>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://johngoehle.com/the-tug</loc>
+    <lastmod>2026-08-15</lastmod>
   </url>
 </urlset>
