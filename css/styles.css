@@ -11,7 +11,9 @@
   --ink:        #2c2722;   /* body text                  */
   --ink-soft:   #5d544a;   /* muted text                 */
   --amber:      #c47b22;   /* sunrise gold (primary)     */
-  --amber-deep: #a5631a;   /* hover                      */
+  --amber-deep: #995c17;   /* hover / links (AA on cream) */
+  --amber-ink:  #945d19;   /* small accent text (AA)      */
+  --amber-btn:  #a6681c;   /* button fill w/ white text   */
   --teal:       #1d3b49;   /* deep lake navy             */
   --teal-deep:  #152c37;   /* footer / hero base         */
   --line:       #e4d8c2;   /* hairline borders           */
@@ -62,7 +64,7 @@ p{margin:0 0 1.1em}
   letter-spacing:.18em;
   font-size:.72rem;
   font-weight:700;
-  color:var(--amber);
+  color:var(--amber-ink);
   margin:0 0 .8em;
 }
 
@@ -80,7 +82,7 @@ p{margin:0 0 1.1em}
   transition:transform .12s ease,background .2s ease,color .2s ease,box-shadow .2s ease;
 }
 .btn:hover{text-decoration:none;transform:translateY(-1px)}
-.btn--primary{background:var(--amber);color:#fff;box-shadow:var(--shadow-sm)}
+.btn--primary{background:var(--amber-btn);color:#fff;box-shadow:var(--shadow-sm)}
 .btn--primary:hover{background:var(--amber-deep);color:#fff}
 .btn--solid{background:var(--teal);color:#fff}
 .btn--solid:hover{background:var(--teal-deep);color:#fff}
@@ -91,7 +93,7 @@ p{margin:0 0 1.1em}
 
 /* ---------- Announcement bar ---------- */
 .announce{
-  background:var(--amber);color:#fff;text-align:center;
+  background:var(--amber-btn);color:#fff;text-align:center;
   font-family:"Helvetica Neue",Arial,sans-serif;font-size:.9rem;
   letter-spacing:.02em;padding:9px 16px;line-height:1.4;
 }
@@ -194,7 +196,7 @@ p{margin:0 0 1.1em}
 }
 .pagehead h1{color:#fff}
 .pagehead p{color:#d7c9b2;max-width:64ch;margin:0}
-.pagehead .eyebrow{color:#e3b566}
+.pagehead .eyebrow,.hero .eyebrow{color:#e3b566}
 
 /* ---------- Prose ---------- */
 .prose{max-width:720px;margin:0 auto}
@@ -229,7 +231,7 @@ p{margin:0 0 1.1em}
 /* ---------- Footer ---------- */
 .site-footer{background:var(--teal-deep);color:#cdbfa9;padding:56px 0 28px;font-size:.95rem}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
-.site-footer h4{color:#fff;font-family:"Helvetica Neue",Arial,sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 14px}
+.site-footer :is(h2,h3,h4){color:#fff;font-family:"Helvetica Neue",Arial,sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 14px}
 .footer-links{list-style:none;margin:0;padding:0}
 .footer-links li{margin-bottom:9px}
 .footer-links a{color:#cdbfa9}
@@ -254,3 +256,45 @@ p{margin:0 0 1.1em}
   .feature__cover{max-width:300px;margin:0 auto}
   .section{padding:60px 0}
 }
+
+/* ---------- Accessibility: skip link ---------- */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:1000;padding:12px 18px;
+  background:#fff;color:#111;font-weight:700;text-decoration:none;
+  border:2px solid currentColor;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
+:focus-visible{outline:3px solid currentColor;outline-offset:2px}
+
+.h-card{font-size:1.3rem}
+
+/* Footer is dark: links need a light accent to stay legible (AA). */
+.site-footer a{color:#b8864d}
+.site-footer a:hover{color:#d9ab74}
+
+/* Links inside running text must not rely on colour alone (WCAG 1.4.1). */
+p a, .prose li a, blockquote a, figcaption a, .form-note a{text-decoration:underline}
+.btn, .nav-links a, .site-footer nav a{text-decoration:none}
+
+.site-footer .footer-bottom a, .site-footer-bottom a, footer span a{text-decoration:underline}
+
+/* ---------- Responsive safety net ----------
+   Grid and flex children default to min-width:auto, so a wide child (a long word,
+   a nowrap label, a fixed-width image) can force a track wider than the viewport
+   and scroll the whole page sideways. These caps stop that at the source. */
+.grid-2 > *, .grid-3 > *, .form-grid > *, .hero__grid > *,
+[class*="-grid"] > * { min-width: 0; }
+img, video, iframe, table { max-width: 100%; }
+input, select, textarea { max-width: 100%; box-sizing: border-box; }
+select { width: 100%; }
+pre, code { overflow-wrap: anywhere; }
+
+/* Two-up field rows must stack on narrow screens. */
+.pair-grid { display: grid; grid-template-columns: 1fr 1fr; }
+@media (max-width: 560px) { .pair-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Intrinsic image dimensions: preserve aspect ratio ----------
+   The width/height attributes we set to stop layout shift are also
+   presentational hints, so a CSS rule that sets only `width` leaves the
+   attribute height in force and squashes the image. :where() gives this
+   zero specificity, so it overrides the presentational hint but still
+   loses to any real rule that sets height on purpose. */
+:where(img[width][height]) { height: auto; }
